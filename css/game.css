@@ -1,4 +1,10 @@
-.background    { background: rgb(52, 166, 251);
+html {
+  margin-top: -10px;
+  margin-left: -10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}.background    { background: rgb(52, 166, 251);
                  table-layout: fixed;
                  border-spacing: 0;   }
 .background td { padding: 0;          }
@@ -11,8 +17,8 @@
 
 .game {
   overflow: hidden;
-  max-width: 600px;
-  max-height: 450px;
+  max-width: auto;
+  max-height: auto;
   position: relative;
 }
 
