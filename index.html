@@ -5,7 +5,15 @@
 <link rel="stylesheet" href="css/game.css">
 
 <body>
-  <script>
-    runGame(GAME_LEVELS, DOMDisplay);
-  </script>
+<div id="grupo1">
+<button id="play" onclick="runGame(GAME_LEVELS, DOMDisplay), ocultar('pause')">JUGAR</button>
+</div>
+
+
 </body>
+<script>
+function ocultar(id){
+    var elemento = document.getElementById(id);
+    elemento.style.display = "none";
+}
+</script>

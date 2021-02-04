@@ -1,8 +1,4 @@
 html {
-  margin-top: -10px;
-  margin-left: -10px;
-  align-items: center;
-  justify-content: center;
   text-align: center;
 }.background    { background: rgb(52, 166, 251);
                  table-layout: fixed;
@@ -27,4 +23,22 @@ html {
 }
 .won .player {
   box-shadow: -4px -7px 8px white, 4px -7px 8px white;
+}
+#grupo1{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: red;
+}
+#play {
+  position:absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 30px;
+}
+body{
+  margin: 0;
 }
