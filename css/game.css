@@ -1,5 +1,6 @@
 html {
   background-color: rgb(52, 166, 251);
+  overflow: hidden;
 }
 
 .background {
@@ -162,4 +163,7 @@ div.boton:hover svg line.B-L {
 div.boton:hover svg line.B-R {
   -webkit-transform: translateX(-270px);
   transform: translateX(-270px);
+}
+#livesli, #nivelli{
+  display: none;
 }

@@ -8,7 +8,7 @@
 <!-- Guillermo Caballero memo@adcrem.com -->
 <div class="boton" id="boton">
 		
-		<a href="#" onclick="runGame(GAME_LEVELS, DOMDisplay), ocultar('boton')">
+		<a href="#" onclick="runGame(GAME_LEVELS, DOMDisplay), ocultar('boton'), mostrar('livesli'), mostrar ('nivelli')">
 		<svg  viewBox="0 0 290 70" width="100%" heigth:"100%" >
 			<line class="L-T"  x1="0" y1="-15" x2="0" y2="20"/>
 			<line class="L-B"  x1="0" y1="50" x2="0" y2="85"/>
@@ -24,15 +24,14 @@
 		</svg>
 		<span>JUGAR</span></a>
 	</div>
+
+	<li id="livesli">Lives: 3</li>
+	<li id="nivelli">Level: 1</li>
+	
+
     
 <!--<div id="grupo1">
 <button id="play" onclick="runGame(GAME_LEVELS, DOMDisplay), ocultar('pause')">JUGAR</button>
 </div>-->
 
 </body>
-<script>
-function ocultar(id){
-    var elemento = document.getElementById(id);
-    elemento.style.display = "none";
-}
-</script>
