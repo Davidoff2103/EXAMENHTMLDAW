@@ -34,12 +34,18 @@ html {
 }
 
 .game {
-  overflow: hidden;
-  width: auto;
-  height: auto;
-  position: relative;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+    position: relative;
 }
 
+.game.playing {
+    overflow: hidden;
+    max-width: auto;
+    max-height: 600px;
+    position: relative;
+}
 .lost .player {
   background: rgb(160, 64, 64);
 }
@@ -166,4 +172,10 @@ div.boton:hover svg line.B-R {
 }
 #livesli, #nivelli{
   display: none;
+}
+ul{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 }

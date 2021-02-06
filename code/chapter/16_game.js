@@ -496,6 +496,8 @@ async function runGame ( plans, Display )
 {
     if ( lives > 0 ) {
     console.log( "You've won!" );
+    window.alert( "¡Has ganado!" );
+    document.location.reload();
   } else {
     console.log( "You've lost!" );
     window.alert( "¡Has perdido!" );
