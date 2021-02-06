@@ -35,8 +35,8 @@ html {
 
 .game {
   overflow: hidden;
-  max-width: auto;
-  max-height: auto;
+  width: auto;
+  height: auto;
   position: relative;
 }
 
