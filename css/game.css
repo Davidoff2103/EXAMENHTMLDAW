@@ -44,7 +44,7 @@ html {
 .game.playing {
     overflow: hidden;
     width: auto;
-    max-height: 100vh;
+    max-height:100vh;
     position: relative;
 }
 .lost .player {
