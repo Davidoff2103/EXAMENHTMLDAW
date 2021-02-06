@@ -11,6 +11,7 @@ html {
 
 .background td {
   padding: 0;
+  max-height: 100vh;
 }
 
 .lava {
@@ -42,8 +43,8 @@ html {
 
 .game.playing {
     overflow: hidden;
-    max-width: auto;
-    max-height: 600px;
+    width: auto;
+    max-height: 100vh;
     position: relative;
 }
 .lost .player {
