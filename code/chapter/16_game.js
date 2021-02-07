@@ -515,5 +515,5 @@ function ocultar(id){
 
 function mostrar ( id )
 {
-document.getElementById(id).style.display = 'list-item';
+document.getElementById(id).style.display = 'block';
 }

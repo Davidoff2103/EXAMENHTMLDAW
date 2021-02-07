@@ -51,16 +51,15 @@ setTimeout( function ()
 {
     document.getElementById( 'loader' ).style.transform = "scale(0)";
     runGame(GAME_LEVELS, DOMDisplay);
-	mostrar('livesli');
-	mostrar ('nivelli');
-}, 5000 );
+	mostrar('lista');
+}, 6000 );
 </script>
-
+<div id="lista">
 <ul>
 	<li id="livesli">Lives: 3</li>
 	<li id="nivelli">Level: 1</li>
 </ul>
-    
+</div>    
 <!--<div id="grupo1">
 <button id="play" onclick="runGame(GAME_LEVELS, DOMDisplay), ocultar('pause')">JUGAR</button>
 </div>-->
