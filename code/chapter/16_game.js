@@ -479,7 +479,7 @@ async function runGame ( plans, Display )
   this.nivel = 1;
   this.nivelView = document.getElementById( "nivelli" );
 
-  for ( let level = 3; level < plans.length && lives > 0; ) {
+  for ( let level = 0; level < plans.length && lives > 0; ) {
     console.log( `level: ${level + 1}`, `lives: ${lives}` );
     let status = await runLevel( new Level( plans[ level ] ),
       Display );
