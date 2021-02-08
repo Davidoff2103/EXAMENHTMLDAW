@@ -322,8 +322,10 @@ ul {
 
 
 .container {
-  display: none;
   padding: 2em;
+  top: 7.5%;
+  left: -0.25%;
+  position: absolute;
 }
 
 button,
@@ -345,8 +347,6 @@ button {
   display: block;
   font-weight: bold;
   position: absolute;
-  top: 12%;
-  left: 2%;
   text-transform: uppercase;
 }
 

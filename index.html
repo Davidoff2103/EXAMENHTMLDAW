@@ -52,6 +52,7 @@ setTimeout( function ()
     document.getElementById( 'loader' ).style.transform = "scale(0)";
     runGame(GAME_LEVELS, DOMDisplay);
 	mostrar('lista');
+	mostrar('restart');
 	mostrar('container');
 }, 6000 );
 </script>
@@ -62,7 +63,7 @@ setTimeout( function ()
 </ul>
 </div>
 <div class="container" id="container">
-  <button class="btn-5">Reiniciar</button>
+  <button class="btn-5" id="restart" onclick="document.location.reload()">Reiniciar</button>
 </div>
 
 <!--<div id="grupo1">
