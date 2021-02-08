@@ -322,6 +322,7 @@ ul {
 
 
 .container {
+  display: none;
   padding: 2em;
   top: 7.5%;
   left: -0.25%;
