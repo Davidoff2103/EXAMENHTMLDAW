@@ -322,6 +322,7 @@ ul {
 
 
 .container {
+  display: none;
   padding: 2em;
 }
 
@@ -335,6 +336,7 @@ button::after {
 
 button {
   width: 115px;
+  height: 25px;
   z-index: 99999;
   background: none;
   border: 3px solid #fff;
@@ -343,8 +345,8 @@ button {
   display: block;
   font-weight: bold;
   position: absolute;
-  top: 90px;
-  left: 30px;
+  top: 12%;
+  left: 2%;
   text-transform: uppercase;
 }
 
