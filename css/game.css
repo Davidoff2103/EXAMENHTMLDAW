@@ -15,11 +15,11 @@ html {
 }
 
 .lava {
-  background: rgb(255, 100, 100);
+  background:greenyellow;
 }
 
 .wall {
-  background: white;
+  background:white;
 }
 
 .actor {
@@ -31,7 +31,7 @@ html {
 }
 
 .player {
-  background: rgb(64, 64, 64);
+  background: linear-gradient(to bottom,white 50%, black 50%);
 }
 
 .game {
@@ -53,6 +53,10 @@ html {
 
 .won .player {
   box-shadow: -4px -7px 8px white, 4px -7px 8px white;
+}
+
+.monster {
+  background: purple;
 }
 
 /* .boton{

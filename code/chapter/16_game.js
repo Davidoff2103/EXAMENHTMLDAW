@@ -479,14 +479,14 @@ async function runGame ( plans, Display )
   this.nivel = 1;
   this.nivelView = document.getElementById( "nivelli" );
 
-  for ( let level = 3; level < plans.length && lives > 0; ) {
+  for ( let level = 0; level < plans.length && lives > 0; ) {
     console.log( `level: ${level + 1}`, `lives: ${lives}` );
     let status = await runLevel( new Level( plans[ level ] ),
       Display );
     if ( status == "won" ) {
       level++;
       nivel++;
-      this.nivelView.innerHTML = "Level: " + this.nivel;
+      this.nivelView.innerHTML = "Level: " + `${level + 1}`;
     } else {
       lives--;
       this.livesView.innerHTML = "Lives: " + this.lives;
@@ -517,3 +517,45 @@ function mostrar ( id )
 {
 document.getElementById(id).style.display = 'block';
 }
+
+class Monster {
+                constructor(pos, speed, reset) {
+                    this.pos = pos;
+                    this.speed = speed;
+                    this.reset = reset;
+                }
+
+                get type() { return "monster"; }
+
+                static create(pos) {
+                    return new Monster(pos.plus(new Vec(0, -1)), new Vec(3, 0));
+                }
+
+                update(time, state) {
+                    let newPos = this.pos.plus(this.speed.times(time));
+                    // If monster does not hit the wall, just carry on.
+                    if (!state.level.touches(newPos, this.size, "wall")) {
+                        return new Monster(newPos, this.speed, this.reset);
+                    // If monster hit the wall, then change monster to the opposite direction
+                    } else {
+                        return new Monster(this.pos, this.speed.times(-1));
+                    }
+                }
+                
+                collide(state) {
+                    let player = state.player;
+                    // Note: To get the bottom of the player, you have to add its vertical size to its vertical position.
+                    // If the player's bottom touch the monster's top, the monster will be destoryed.
+                    if(player.pos.y + player.size.y < this.pos.y + 0.5){
+                        let filtered = state.actors.filter(a => a != this);
+                        return new State(state.level, filtered, state.status);
+                    // If touch the monster's other parts, the player will lose the game.
+                    } else {
+                        return new State(state.level, state.actors, "lost");
+                    }
+                }
+            }
+
+            Monster.prototype.size = new Vec(1.2, 2);
+
+            levelChars["M"] = Monster;
