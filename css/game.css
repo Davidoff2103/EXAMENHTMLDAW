@@ -1,10 +1,10 @@
 html {
-  background-color: rgb(52, 166, 251);
+  background-image: url("https://us.123rf.com/450wm/turr17/turr171410/turr17141000733/32971957-modelo-de-repetici%C3%B3n-geom%C3%A9trico-textura-moderno-abstracto-incons%C3%BAtil-para-fondos-de-pantalla-y-fondo.jpg?ver=6");
   overflow: hidden;
 }
 
 .background {
-  background: rgb(52, 166, 251);
+  background: none;
   table-layout: fixed;
   border-spacing: 0;
 }
@@ -19,7 +19,7 @@ html {
 }
 
 .wall {
-  background:white;
+  background:gainsboro;
 }
 
 .actor {
@@ -31,7 +31,7 @@ html {
 }
 
 .player {
-  background: linear-gradient(to bottom, #fdddca 50%, black 50%);
+  background: linear-gradient(to bottom, #fdddca 50%, red 50%);
 }
 
 .game {
@@ -48,7 +48,7 @@ html {
 }
 
 .lost .player {
-  background: linear-gradient(to bottom, rgb(160, 64, 64) 50%, black 50%);
+  background: linear-gradient(to bottom, rgb(160, 64, 64) 50%, red 50%);
 }
 
 .won .player {
@@ -188,17 +188,23 @@ ul {
   z-index: 9999;
   border-radius: 5px;
   border: 3px solid gold;
-  background: rgb(173, 216, 230, 0.5);
+  background: greenyellow;
   height: 40px;
   width: 100px;
   padding: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+ul:hover{
+  background-color: white;
+  color: black;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
 }
 
 
 .loader {
   display: none;
-  background: blue;
-  background: radial-gradient(blue, lightblue);
   bottom: 0;
   left: 0;
   overflow: hidden;
@@ -207,6 +213,7 @@ ul {
   top: 0;
   z-index: 99999;
   transition: all 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .loader h1 {
@@ -349,6 +356,10 @@ button {
   font-weight: bold;
   position: absolute;
   text-transform: uppercase;
+  font-family: Arial,
+  Helvetica,
+  sans-serif;
+
 }
 
 button::before,
