@@ -324,8 +324,8 @@ ul {
 .container {
   display: none;
   padding: 2em;
-  top: 7.5%;
-  left: -0.25%;
+  top: 8.5%;
+  left: -0.4%;
   position: absolute;
 }
 
@@ -341,10 +341,10 @@ button {
   width: 115px;
   height: 25px;
   z-index: 99999;
-  background: none;
+  background: greenyellow;
   border: 3px solid #fff;
   border-radius: 5px;
-  color: #fff;
+  color: black;
   display: block;
   font-weight: bold;
   position: absolute;
