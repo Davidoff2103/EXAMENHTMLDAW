@@ -476,7 +476,6 @@ async function runGame ( plans, Display )
 {
   this.lives = 3;
   this.livesView = document.getElementById( "livesli" );
-  this.nivel = 1;
   this.nivelView = document.getElementById( "nivelli" );
 
   for ( let level = 0; level < plans.length && lives > 0; ) {
@@ -485,7 +484,6 @@ async function runGame ( plans, Display )
       Display );
     if ( status == "won" ) {
       level++;
-      nivel++;
       this.nivelView.innerHTML = "Level: " + `${level + 1}`;
     } else {
       lives--;
@@ -503,8 +501,7 @@ async function runGame ( plans, Display )
     window.alert( "¡Has perdido!" );
     document.location.reload();
     // mostrar( 'boton' );
-  }
-    
+  } 
 }, 1000 );
 
 }
