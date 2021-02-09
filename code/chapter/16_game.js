@@ -425,7 +425,7 @@ function runLevel( level, Display ) {
 }
 
 async function runGame( plans, Display ) {
-  this.lives = 3;
+  this.lives = 5;
   this.livesView = document.getElementById( "livesli" );
   this.nivelView = document.getElementById( "nivelli" );
 

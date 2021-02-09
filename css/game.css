@@ -60,22 +60,6 @@ html {
   background: green;
 }
 
-/* .boton{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: red;
-}
-#play {
-  position:absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  height: 30px;
-} */
-
 body {
   margin: 0;
 }
@@ -205,6 +189,7 @@ div.boton:hover svg line.B-R {
 #livesli,
 #nivelli {
   margin-left: 20%;
+  line-height: 20px;
 }
 
 #datos {
