@@ -490,6 +490,13 @@ async function runGame ( plans, Display )
       this.livesView.innerHTML = "Lives: " + this.lives;
     }
   }
+  if ( lives <= 0 )
+  {
+    ocultar( 'lista' );
+    ocultar( 'restart' );
+    ocultar( 'container' );
+    ocultar( 'about' );
+  }
   setTimeout( function ()
 {
     if ( lives > 0 ) {

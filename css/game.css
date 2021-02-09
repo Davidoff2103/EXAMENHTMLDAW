@@ -32,6 +32,7 @@ html {
 
 .player {
   background: linear-gradient(to bottom, #fdddca 50%, red 50%);
+  z-index: 999999;
 }
 
 .game {
