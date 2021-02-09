@@ -1,6 +1,6 @@
 const GAME_OVER_PICTURE = "game_over.png",
   YOU_WIN_PICTURE = "you_win.png";
-    
+
 var simpleLevelPlan = `
 ......................
 ..#................#..
@@ -326,21 +326,23 @@ Player.prototype.update = function ( time, state, keys ) {
   return new Player( pos, new Vec( xSpeed, ySpeed ) );
 };
 
-// function trackKeys(keys) {
-//   let down = Object.create(null);
-//   function track(event) {
-//     if (keys.includes(event.key)) {
-//       down[event.key] = event.type == "keydown";
-//       event.preventDefault();
-//     }
-//   }
-//   window.addEventListener("keydown", track);
-//   window.addEventListener("keyup", track);
-//   return down;
-// }
+function trackKeys( keys ) {
+  let down = Object.create( null );
 
-// var arrowKeys =
-//   trackKeys(["ArrowLeft", "ArrowRight", "ArrowUp"]);
+  function track( event ) {
+    if ( keys.includes( event.key ) ) {
+      down[ event.key ] = event.type == "keydown";
+      event.preventDefault();
+    }
+  }
+  window.addEventListener( "keydown", track );
+  window.addEventListener( "keyup", track );
+  down.unregister = () => {
+    window.removeEventListener( "keydown", track );
+    window.removeEventListener( "keyup", track );
+  };
+  return down;
+}
 
 function runAnimation( frameFunc ) {
   let lastTime = null;
@@ -355,29 +357,6 @@ function runAnimation( frameFunc ) {
   }
   requestAnimationFrame( frame );
 }
-
-// function runLevel(level, Display) {
-//   let display = new Display(document.body, level);
-//   let state = State.start(level);
-//   let ending = 1;
-//   return new Promise(resolve => {
-//     runAnimation(time => {
-//       state = state.update(time, arrowKeys);
-//       display.syncState(state);
-//       if (state.status == "playing") {
-//         return true;
-//       } else if (ending > 0) {
-//         ending -= time;
-//         return true;
-//       } else {
-//         display.clear();
-//         resolve(state.status);
-//         return false;
-//       }
-//     });
-//   });
-// }
-
 
 // Para saber cuándo pausar y reanudar la animación, el nivel
 // que se muestra puede estar en tres estados de ejecución:
@@ -445,40 +424,12 @@ function runLevel( level, Display ) {
   } );
 }
 
-function trackKeys( keys ) {
-  let down = Object.create( null );
-
-  function track( event ) {
-    if ( keys.includes( event.key ) ) {
-      down[ event.key ] = event.type == "keydown";
-      event.preventDefault();
-    }
-  }
-  window.addEventListener( "keydown", track );
-  window.addEventListener( "keyup", track );
-  down.unregister = () => {
-    window.removeEventListener( "keydown", track );
-    window.removeEventListener( "keyup", track );
-  };
-  return down;
-}
-
-// async function runGame(plans, Display) {
-//   for (let level = 0; level < plans.length;) {
-//     let status = await runLevel(new Level(plans[level]),
-//                                 Display);
-//     if (status == "won") level++;
-//   }
-//   console.log("You've won!");
-// }
-
-async function runGame ( plans, Display )
-{
+async function runGame( plans, Display ) {
   this.lives = 3;
   this.livesView = document.getElementById( "livesli" );
   this.nivelView = document.getElementById( "nivelli" );
 
-  for ( let level = 5; level < plans.length && lives > 0; ) {
+  for ( let level = 3; level < plans.length && lives > 0; ) {
     console.log( `level: ${level + 1}`, `lives: ${lives}` );
     let status = await runLevel( new Level( plans[ level ] ),
       Display );
@@ -490,85 +441,81 @@ async function runGame ( plans, Display )
       this.livesView.innerHTML = "Lives: " + this.lives;
     }
   }
-  if ( lives <= 0 )
-  {
+  if ( lives <= 0 ) {
     ocultar( 'lista' );
     ocultar( 'restart' );
     ocultar( 'container' );
     ocultar( 'about' );
     mostrar( 'gameOver' );
-  }
-  else
-  {
+  } else {
     ocultar( 'lista' );
     ocultar( 'restart' );
     ocultar( 'container' );
     ocultar( 'about' );
     mostrar( 'youWin' );
   }
-  setTimeout( function ()
-{
+  setTimeout( function () {
     if ( lives > 0 ) {
-    console.log( "You've won!" );
-    window.alert( "¡Has ganado!" );
-    document.location.reload();
-  } else {
-    console.log( "You've lost!" );
-    window.alert( "¡Has perdido!" );
-    document.location.reload();
-    // mostrar( 'boton' );
-  } 
-}, 1000 );
+      console.log( "You've won!" );
+      window.alert( "¡Has ganado!" );
+      document.location.reload();
+    } else {
+      console.log( "You've lost!" );
+      window.alert( "¡Has perdido!" );
+      document.location.reload();
+    }
+  }, 1000 );
 
 }
-function ocultar(id){
-    var elemento = document.getElementById(id);
-    elemento.style.display = "none";
+
+function ocultar( id ) {
+  var elemento = document.getElementById( id );
+  elemento.style.display = "none";
 }
 
-function mostrar ( id )
-{
-document.getElementById(id).style.display = 'block';
+function mostrar( id ) {
+  document.getElementById( id ).style.display = 'block';
 }
 
 class Monster {
-                constructor(pos, speed, reset) {
-                    this.pos = pos;
-                    this.speed = speed;
-                    this.reset = reset;
-                }
+  constructor( pos, speed, reset ) {
+    this.pos = pos;
+    this.speed = speed;
+    this.reset = reset;
+  }
 
-                get type() { return "monster"; }
+  get type() {
+    return "monster";
+  }
 
-                static create(pos) {
-                    return new Monster(pos.plus(new Vec(0, -1)), new Vec(3, 0));
-                }
+  static create( pos ) {
+    return new Monster( pos.plus( new Vec( 0, -1 ) ), new Vec( 3, 0 ) );
+  }
 
-                update(time, state) {
-                    let newPos = this.pos.plus(this.speed.times(time));
-                    // If monster does not hit the wall, just carry on.
-                    if (!state.level.touches(newPos, this.size, "wall")) {
-                        return new Monster(newPos, this.speed, this.reset);
-                    // If monster hit the wall, then change monster to the opposite direction
-                    } else {
-                        return new Monster(this.pos, this.speed.times(-1));
-                    }
-                }
-                
-                collide(state) {
-                    let player = state.player;
-                    // Note: To get the bottom of the player, you have to add its vertical size to its vertical position.
-                    // If the player's bottom touch the monster's top, the monster will be destoryed.
-                    if(player.pos.y + player.size.y < this.pos.y + 0.5){
-                        let filtered = state.actors.filter(a => a != this);
-                        return new State(state.level, filtered, state.status);
-                    // If touch the monster's other parts, the player will lose the game.
-                    } else {
-                        return new State(state.level, state.actors, "lost");
-                    }
-                }
-            }
+  update( time, state ) {
+    let newPos = this.pos.plus( this.speed.times( time ) );
+    // Si el monstruo final no toca ningún muro, sigue avanzando
+    if ( !state.level.touches( newPos, this.size, "wall" ) ) {
+      return new Monster( newPos, this.speed, this.reset );
+      // Si el monstruo final golpeao el muro, cambia de dirección
+    } else {
+      return new Monster( this.pos, this.speed.times( -1 ) );
+    }
+  }
 
-            Monster.prototype.size = new Vec(1.5, 3);
+  collide( state ) {
+    let player = state.player;
+    //si el jugador toca la parte de arriba del monstruo, le derrota
+    if ( player.pos.y + player.size.y < this.pos.y + 0.5 ) {
+      let filtered = state.actors.filter( a => a != this );
+      return new State( state.level, filtered, state.status );
+      //si toca cualquier otra parte, pierde una vida
+    } else {
+      return new State( state.level, state.actors, "lost" );
+    }
+  }
+}
 
-            levelChars["M"] = Monster;
+Monster.prototype.size = new Vec( 1.5, 3 );
+
+levelChars[ "M" ] = Monster;
