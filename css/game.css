@@ -15,11 +15,11 @@ html {
 }
 
 .lava {
-  background:greenyellow;
+  background: greenyellow;
 }
 
 .wall {
-  background:gainsboro;
+  background: gainsboro;
 }
 
 .actor {
@@ -80,6 +80,27 @@ body {
   margin: 0;
 }
 
+#youWin,
+#gameOver {
+  display: none;
+  z-index: 99999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  filter: hue-rotate(60deg) brightness(1000%);
+}
+
+#youWin {
+  width: 75%;
+}
+
+#gameOver {
+  width: 50%;
+}
+
 div.boton {
   position: absolute;
   top: 0;
@@ -92,13 +113,13 @@ div.boton {
   font-family: 'Open Sans', sans-serif;
   font-size: 24px;
   font-weight: 400;
-  color: #fff;
   text-align: center;
   overflow: hidden;
+  background: radial-gradient(gray, black);
 }
 
 div.boton a {
-  color: #f38b05;
+  color: red;
   border: none;
   text-decoration: none;
   -webkit-transition: all 600ms ease-in-out;
@@ -109,7 +130,7 @@ div.boton a {
 }
 
 div.boton:hover a {
-  color: #f38b05;
+  color: red;
   border: none;
   text-decoration: none;
 }
@@ -134,7 +155,7 @@ div.boton svg line {
 }
 
 div.boton:hover svg line {
-  stroke: #f38b05;
+  stroke: red;
 }
 
 div.boton:hover svg line.L-T {
@@ -176,12 +197,16 @@ div.boton:hover svg line.B-R {
   -webkit-transform: translateX(-270px);
   transform: translateX(-270px);
 }
-#lista{
+
+#lista {
   display: none;
 }
-#livesli, #nivelli{
+
+#livesli,
+#nivelli {
   margin-left: 20%;
 }
+
 #datos {
   position: absolute;
   top: 25px;
@@ -196,14 +221,16 @@ div.boton:hover svg line.B-R {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
-#datos:hover{
+
+#datos:hover {
   background-color: white;
   color: black;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
 }
-#info{
+
+#info {
   position: absolute;
   top: 25px;
   left: 145px;
@@ -214,22 +241,24 @@ div.boton:hover svg line.B-R {
   height: 20px;
   padding: 5px;
   font-family: Arial,
-  Helvetica,
-  sans-serif;
+    Helvetica,
+    sans-serif;
   display: flex;
   justify-content: center;
   align-content: center;
   flex-direction: column;
 }
-#info:hover{
+
+#info:hover {
   background-color: white;
   color: black;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
 }
-p{
-  margin:0;
+
+p {
+  margin: 0;
 }
 
 
@@ -311,35 +340,35 @@ p{
 }
 
 .loader-line-wrap:nth-child(1) .loader-line {
-  border-color: green;
+  border-color: red;
   height: 90px;
   width: 90px;
   top: 7px;
 }
 
 .loader-line-wrap:nth-child(2) .loader-line {
-  border-color: greenyellow;
+  border-color: darkred;
   height: 76px;
   width: 76px;
   top: 14px;
 }
 
 .loader-line-wrap:nth-child(3) .loader-line {
-  border-color: green;
+  border-color: red;
   height: 62px;
   width: 62px;
   top: 21px;
 }
 
 .loader-line-wrap:nth-child(4) .loader-line {
-  border-color: greenyellow;
+  border-color: darkred;
   height: 48px;
   width: 48px;
   top: 28px;
 }
 
 .loader-line-wrap:nth-child(5) .loader-line {
-  border-color: green;
+  border-color: red;
   height: 34px;
   width: 34px;
   top: 35px;
@@ -366,14 +395,17 @@ p{
 }
 
 button,
-button::after, #about, #about::after {
+button::after,
+#about,
+#about::after {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-button, #about{
+button,
+#about {
   width: 115px;
   height: 25px;
   z-index: 99999;
@@ -386,28 +418,33 @@ button, #about{
   position: absolute;
   text-transform: uppercase;
   font-family: Arial,
-  Helvetica,
-  sans-serif;
+    Helvetica,
+    sans-serif;
 
 }
 
 button::before,
-button::after, #about::before, #about::after {
+button::after,
+#about::before,
+#about::after {
   background: #fff;
   content: '';
   position: absolute;
   z-index: -1;
 }
 
-button:hover, #about:hover {
+button:hover,
+#about:hover {
   color: #2ecc71;
 }
 
-.btn-5, #about {
+.btn-5,
+#about {
   overflow: hidden;
 }
 
-.btn-5::after, #about::after {
+.btn-5::after,
+#about::after {
   /*background-color: #f00;*/
   height: 100%;
   left: -35%;
@@ -418,7 +455,8 @@ button:hover, #about:hover {
   width: 0;
 }
 
-.btn-5:hover:after, #about:hover:after {
+.btn-5:hover:after,
+#about:hover:after {
   height: 100%;
   width: 135%;
 }

@@ -478,7 +478,7 @@ async function runGame ( plans, Display )
   this.livesView = document.getElementById( "livesli" );
   this.nivelView = document.getElementById( "nivelli" );
 
-  for ( let level = 0; level < plans.length && lives > 0; ) {
+  for ( let level = 5; level < plans.length && lives > 0; ) {
     console.log( `level: ${level + 1}`, `lives: ${lives}` );
     let status = await runLevel( new Level( plans[ level ] ),
       Display );
@@ -496,6 +496,15 @@ async function runGame ( plans, Display )
     ocultar( 'restart' );
     ocultar( 'container' );
     ocultar( 'about' );
+    mostrar( 'gameOver' );
+  }
+  else
+  {
+    ocultar( 'lista' );
+    ocultar( 'restart' );
+    ocultar( 'container' );
+    ocultar( 'about' );
+    mostrar( 'youWin' );
   }
   setTimeout( function ()
 {
@@ -560,6 +569,6 @@ class Monster {
                 }
             }
 
-            Monster.prototype.size = new Vec(1.2, 2);
+            Monster.prototype.size = new Vec(1.5, 3);
 
             levelChars["M"] = Monster;
