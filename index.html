@@ -1,81 +1,85 @@
 <!doctype html>
 <html>
-<script src="code/chapter/16_game.js"></script>
-<script src="code/levels.js"></script>
+	<script src="code/chapter/16_game.js"></script>
+	<script src="code/levels.js"></script>
 
-<link rel="stylesheet" href="css/game.css">
+	<link rel="stylesheet" href="css/game.css">
 
-<body>
+	<body>
 
-<div class="boton" id="boton">
-		
-		<a href="#" onclick="ocultar('boton'), mostrar ('loader')">
-		<svg  viewBox="0 0 290 70" width="100%" heigth:"100%" >
-			<line class="L-T"  x1="0" y1="-15" x2="0" y2="20"/>
-			<line class="L-B"  x1="0" y1="50" x2="0" y2="85"/>
+		<div class="boton" id="boton">
 
-			<line class="R-T" x1="290" y1="-15" x2="290" y2="20"/>
-			<line class="R-B"  x1="290" y1="50" x2="290" y2="85"/>
+			<a href="#" onclick="ocultar('boton'), mostrar ('loader')">
+				<svg viewBox="0 0 290 70" width="100%" heigth:"100%">
+					<line class="L-T" x1="0" y1="-15" x2="0" y2="20" />
+					<line class="L-B" x1="0" y1="50" x2="0" y2="85" />
 
-			<line class="T-L"  x1="-125" y1="0" x2="20" y2="0"/>
-			<line class="T-R"  x1="270" y1="0" x2="415" y2="0"/>
+					<line class="R-T" x1="290" y1="-15" x2="290" y2="20" />
+					<line class="R-B" x1="290" y1="50" x2="290" y2="85" />
 
-			<line class="B-R"  x1="270" y1="70" x2="415" y2="70"/>
-			<line class="B-L"  x1="-125" y1="70" x2="20" y2="70"/>
-		</svg>
-		<span>JUGAR</span></a>
-	</div>
+					<line class="T-L" x1="-125" y1="0" x2="20" y2="0" />
+					<line class="T-R" x1="270" y1="0" x2="415" y2="0" />
 
-<div class="loader" id="loader">
-<h1>Cargando...</h1>
-	<div class="loader-inner">
-		<div class="loader-line-wrap">
-			<div class="loader-line"></div>
+					<line class="B-R" x1="270" y1="70" x2="415" y2="70" />
+					<line class="B-L" x1="-125" y1="70" x2="20" y2="70" />
+				</svg>
+				<span>JUGAR</span></a>
 		</div>
-		<div class="loader-line-wrap">
-			<div class="loader-line"></div>
-		</div>
-		<div class="loader-line-wrap">
-			<div class="loader-line"></div>
-		</div>
-		<div class="loader-line-wrap">
-			<div class="loader-line"></div>
-		</div>
-		<div class="loader-line-wrap">
-			<div class="loader-line"></div>
-		</div>
-	</div>
-</div>
-<script>
-setTimeout( function ()
-{
-    document.getElementById( 'loader' ).style.transform = "scale(0)";
-    runGame(GAME_LEVELS, DOMDisplay);
-	mostrar('lista');
-	mostrar('restart');
-	mostrar('container');
-}, 6000 );
-</script>
-<div id="lista">
-<ul id="datos">
-	<li id="livesli">Lives: 3</li>
-	<li id="nivelli">Level: 1</li>
-</ul>
-<div id="info">
-	<p>Pulsa <strong>Esc</strong> para pausar/Reanudar</p>
-</div>
-</div>
-<div class="container" id="container">
-  <button class="btn-5" id="restart" onclick="document.location.reload()">Reiniciar</button>
-</div>
 
-<div class="container2" id="container2">
-  <button class="about" id="about" href="https://github.com/Davidoff2103?tab=repositories">About me</button>
-</div>
+		<div class="loader" id="loader">
+			<h1>Cargando...</h1>
+			<div class="loader-inner">
+				<div class="loader-line-wrap">
+					<div class="loader-line"></div>
+				</div>
+				<div class="loader-line-wrap">
+					<div class="loader-line"></div>
+				</div>
+				<div class="loader-line-wrap">
+					<div class="loader-line"></div>
+				</div>
+				<div class="loader-line-wrap">
+					<div class="loader-line"></div>
+				</div>
+				<div class="loader-line-wrap">
+					<div class="loader-line"></div>
+				</div>
+			</div>
+		</div>
 
-<!--<div id="grupo1">
+		<script>
+			setTimeout( function () {
+				ocultar('boton');
+				document.getElementById( 'loader' ).style.transform = "scale(0)";
+				runGame( GAME_LEVELS, DOMDisplay );
+				mostrar( 'lista' );
+				mostrar( 'restart' );
+				mostrar( 'container' );
+				mostrar('about');
+			}, 6000 );
+		</script>
+
+		<div id="lista">
+			<ul id="datos">
+				<li id="livesli">Lives: 3</li>
+				<li id="nivelli">Level: 1</li>
+			</ul>
+			<div id="info">
+				<p>Pulsa <strong>Esc</strong> para pausar/Reanudar</p>
+			</div>
+		</div>
+		<div class="container" id="container">
+			<button class="btn-5" id="restart" onclick="document.location.reload()">Reiniciar</button>
+		</div>
+
+		<div class="container2" id="container2">
+			<a class="about" id="about" href="https://github.com/Davidoff2103?tab=repositories" target="_blank">About me</button>
+		</div>
+
+		<!--<div id="grupo1">
 <button id="play" onclick="runGame(GAME_LEVELS, DOMDisplay), ocultar('pause')">JUGAR</button>
 </div>-->
 
-</body>
+	</body>
+
 </html>
