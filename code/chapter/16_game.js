@@ -1,6 +1,3 @@
-const GAME_OVER_PICTURE = "game_over.png",
-  YOU_WIN_PICTURE = "you_win.png";
-
 var simpleLevelPlan = `
 ......................
 ..#................#..
