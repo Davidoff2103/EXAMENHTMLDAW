@@ -27,7 +27,7 @@ html {
 }
 
 .coin {
-  background: rgb(241, 229, 89);
+  background: gold;
 }
 
 .player {
@@ -85,6 +85,20 @@ body {
   width: 50%;
 }
 
+#titulo {
+  font-family: 'Stalinist One',
+    cursive;
+  position: absolute;
+  top: 200px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: xxx-large;
+  color: white;
+  text-align: center;
+}
+
 div.boton {
   position: absolute;
   top: 0;
@@ -94,12 +108,13 @@ div.boton {
   margin: auto;
   width: 290px;
   height: 70px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Stalinist One',
+    cursive;
   font-size: 24px;
   font-weight: 400;
   text-align: center;
   overflow: hidden;
-  background: radial-gradient(gray, black);
+  background: black;
 }
 
 div.boton a {
@@ -188,7 +203,6 @@ div.boton:hover svg line.B-R {
 
 #livesli,
 #nivelli {
-  margin-left: 20%;
   line-height: 20px;
 }
 
@@ -198,14 +212,19 @@ div.boton:hover svg line.B-R {
   left: 25px;
   z-index: 9999;
   border-radius: 5px;
-  border: 3px solid gold;
+  border: 3px solid white;
   background: greenyellow;
   height: 40px;
   width: 100px;
   padding: 5px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Stalinist One',
+    cursive;
+  font-size: 12px;
   margin: 0;
-  font-weight:bold;
+  font-weight: bold;
+  list-style: none;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 #datos:hover {
@@ -222,17 +241,18 @@ div.boton:hover svg line.B-R {
   left: 145px;
   z-index: 9999;
   border-radius: 5px;
-  border: 3px solid gold;
+  border: 3px solid white;
   background: greenyellow;
-  height: 20px;
+  height: 25px;
   padding: 5px;
-  font-family: Arial,
-    Helvetica,
-    sans-serif;
+  font-family: 'Stalinist One',
+    cursive;
+  font-size: 10px;
   display: flex;
   justify-content: center;
   align-content: center;
   flex-direction: column;
+  text-transform: uppercase;
 }
 
 #info:hover {
@@ -258,7 +278,8 @@ p {
   top: 0;
   z-index: 99999;
   transition: all 0.5s;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Stalinist One',
+    cursive;
 }
 
 .loader h1 {
@@ -390,6 +411,10 @@ button::after,
   transition: all 0.3s;
 }
 
+#restart {
+  font-size: 10px;
+}
+
 button,
 #about {
   width: 115px;
@@ -403,9 +428,8 @@ button,
   font-weight: bold;
   position: absolute;
   text-transform: uppercase;
-  font-family: Arial,
-    Helvetica,
-    sans-serif;
+  font-family: 'Stalinist One',
+    cursive;
 
 }
 
@@ -457,4 +481,5 @@ button:hover,
   text-align: center;
   line-height: 25px;
   text-decoration: none;
+  font-size: 12px;
 }

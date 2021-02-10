@@ -1,15 +1,17 @@
 <!doctype html>
 <html>
+	<title>Red's Journey</title>
 	<script src="code/chapter/16_game.js"></script>
 	<script src="code/levels.js"></script>
-
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/game.css">
 
 	<body>
-
+		<h1 id="titulo">RED'S JOURNEY</h1>
 		<div class="boton" id="boton">
 
-			<a href="#" onclick="ocultar('boton'), mostrar ('loader')">
+			<a href="#" onclick="ocultar('boton'), ocultar ('titulo'), mostrar ('loader')">
 				<svg viewBox="0 0 290 70" width="100%" heigth:"100%">
 					<line class="L-T" x1="0" y1="-15" x2="0" y2="20" />
 					<line class="L-B" x1="0" y1="50" x2="0" y2="85" />
@@ -47,18 +49,6 @@
 			</div>
 		</div>
 
-		<script>
-			setTimeout( function () {
-				ocultar('boton');
-				document.getElementById( 'loader' ).style.transform = "scale(0)";
-				runGame( GAME_LEVELS, DOMDisplay );
-				mostrar( 'lista' );
-				mostrar( 'restart' );
-				mostrar( 'container' );
-				mostrar('about');
-			}, 6000 );
-		</script>
-
 		<div id="lista">
 			<ul id="datos">
 				<li id="livesli">Lives: 5</li>
@@ -75,8 +65,8 @@
 		<div class="container2" id="container2">
 			<a class="about" id="about" href="https://github.com/Davidoff2103?tab=repositories" target="_blank">About me</a>
 		</div>
-				<img id="youWin" src="you_win.png">
-				<img id="gameOver" src="game_over.png">
+		<img id="youWin" src="you_win.png">
+		<img id="gameOver" src="game_over.png">
 
 
 		<!--<div id="grupo1">

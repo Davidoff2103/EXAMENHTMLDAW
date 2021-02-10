@@ -1,3 +1,14 @@
+setTimeout( function () {
+  ocultar( 'boton' );
+  ocultar( 'titulo' );
+  document.getElementById( 'loader' ).style.transform = "scale(0)";
+  runGame( GAME_LEVELS, DOMDisplay );
+  mostrar( 'lista' );
+  mostrar( 'restart' );
+  mostrar( 'container' );
+  mostrar( 'about' );
+}, 6000 );
+
 var simpleLevelPlan = `
 ......................
 ..#................#..
