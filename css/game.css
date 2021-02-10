@@ -31,7 +31,9 @@ html {
 }
 
 .player {
-  background: linear-gradient(to bottom, #fdddca 50%, red 50%);
+  background-image: url("player2.png");
+  background-position: center;
+  background-size: cover;
   z-index: 999999;
 }
 
