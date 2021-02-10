@@ -51,7 +51,9 @@ html {
 }
 
 .lost .player {
-  background: linear-gradient(to bottom, rgb(160, 64, 64) 50%, red 50%);
+  background-image: url("died_player.png");
+  background-position: center;
+  background-size: cover;
 }
 
 .won .player {
