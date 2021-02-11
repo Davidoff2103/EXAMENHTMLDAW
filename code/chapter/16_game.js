@@ -472,7 +472,7 @@ async function runGame( plans, Display ) {
       window.alert( "¡Has perdido!" );
       document.location.reload();
     }
-  }, 1000 );
+  }, 3000 );
 
 }
 
