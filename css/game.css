@@ -51,7 +51,7 @@ html {
 }
 
 @media screen and (min-width:1920px){
-  .game.playing{
+  .game.playing, .gane.lost{
     zoom: 150%;
   }
 }
