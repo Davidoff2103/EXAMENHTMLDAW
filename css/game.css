@@ -1,5 +1,5 @@
 html {
-  background-image: url("https://us.123rf.com/450wm/turr17/turr171410/turr17141000733/32971957-modelo-de-repetici%C3%B3n-geom%C3%A9trico-textura-moderno-abstracto-incons%C3%BAtil-para-fondos-de-pantalla-y-fondo.jpg?ver=6");
+  background-image: url("../imagenes/fondo.jpg");
   overflow: hidden;
 }
 
@@ -31,7 +31,7 @@ html {
 }
 
 .player {
-  background-image: url("/imagenes/player.png");
+  background-image: url("../imagenes/player.png");
   background-position: center;
   background-size: cover;
   z-index: 999999;
@@ -51,7 +51,7 @@ html {
 }
 
 .lost .player {
-  background-image: url("/imagenes/died_player.png");
+  background-image: url("../imagenes/died_player.png");
   background-position: center;
   background-size: cover;
 }
