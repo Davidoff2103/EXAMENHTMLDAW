@@ -289,8 +289,14 @@ p {
 .loader h1 {
   text-align: center;
   align-items: center;
-  line-height: 450px;
+  position: absolute;
+  top: 35%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   color: white;
+  text-transform: uppercase;
 }
 
 .loader-inner {
