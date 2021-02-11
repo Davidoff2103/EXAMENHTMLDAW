@@ -50,13 +50,17 @@ html {
   position: relative;
 }
 
-@media screen and (min-width:1920px){
-  .game.playing, .game.lost, .game.won{
+@media screen and (min-width:1920px) {
+
+  .game.playing,
+  .game.lost,
+  .game.won {
     zoom: 150%;
   }
 }
 
 @media screen and (min-width:1440px) and (max-width:1919px) {
+
   .game.playing,
   .game.lost,
   .game.won {
