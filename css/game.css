@@ -52,7 +52,7 @@ html {
 
 @media screen and (min-width:1920px){
   .game.playing{
-    zoom: 120%;
+    zoom: 150%;
   }
 }
 
