@@ -438,7 +438,6 @@ async function runGame( plans, Display ) {
   this.nivelView = document.getElementById( "nivelli" );
 
   for ( let level = 0; level < plans.length && lives > 0; ) {
-    console.log( `level: ${level + 1}`, `lives: ${lives}` );
     let status = await runLevel( new Level( plans[ level ] ),
       Display );
     if ( status == "won" ) {
@@ -463,16 +462,8 @@ async function runGame( plans, Display ) {
     mostrar( 'youWin' );
   }
   setTimeout( function () {
-    if ( lives > 0 ) {
-      console.log( "You've won!" );
-      window.alert( "¡Has ganado!" );
       document.location.reload();
-    } else {
-      console.log( "You've lost!" );
-      window.alert( "¡Has perdido!" );
-      document.location.reload();
-    }
-  }, 3000 );
+  }, 5000 );
 
 }
 
