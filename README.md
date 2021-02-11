@@ -1,7 +1,7 @@
 # EXAMENHTMLDAW
 
 ## Descripción
-El proyecto cosnsiste en un entretenido y sencillo juego de plataforms. El jugador, con 5 vidas, va avanzando por los diferentes niveles hasta llegar al final, donde se encontrará al monstruo final. Para ir avanzando por los mapas, debe ir recolectando todas las monedas de cada uno mientras evita que los cubos verdes (radioactivos) le toquen.
+El proyecto cosnsiste en un entretenido y sencillo juego de plataformas. El jugador, con 5 vidas, va avanzando por los diferentes niveles hasta llegar al final, donde se encontrará al monstruo final. Para ir avanzando por los mapas, debe ir recolectando todas las monedas de cada uno mientras evita que los cubos verdes (radioactivos) le toquen.
 
 El jugador puede caminar con las teclas de flecha izquierda y derecha y puede saltar con la flecha hacia arriba. También puede cambiar de dirección en el aire.
 
