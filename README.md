@@ -8,7 +8,7 @@ El jugador puede caminar con las teclas de flecha izquierda y derecha y puede sa
 El juego consiste en un fondo estático, dispuesto como una cuadrícula, con los elementos móviles superpuestos sobre ese fondo. Cada campo de la cuadrícula está vacío, sólido o de elementos radioactivos. Los elementos móviles son el jugador, las monedas y ciertas piezas de lava.
 
 <p align="center">
-  <img width="30%" src="imagenes/ejemplo.png">
+  <img width="30%" src="https://github.com/Davidoff2103/EXAMENHTMLDAW/blob/main/imagenes/ejemplo.png?raw=true">
 </p>
 
 ### David Blanco Bautista
