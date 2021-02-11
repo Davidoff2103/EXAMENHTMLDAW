@@ -70,6 +70,16 @@ html {
   }
 }
 
+@media screen and (min-width:1280px) and (max-width:1439px) {
+
+  .game.playing,
+  .game.lost,
+  .game.won,
+  .game {
+    zoom: 140%;
+  }
+}
+
 .lost .player {
   background-image: url("../imagenes/died_player.png");
   background-position: center;
