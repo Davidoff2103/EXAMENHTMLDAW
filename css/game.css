@@ -54,7 +54,8 @@ html {
 
   .game.playing,
   .game.lost,
-  .game.won {
+  .game.won,
+  .game {
     zoom: 150%;
   }
 }
@@ -63,7 +64,8 @@ html {
 
   .game.playing,
   .game.lost,
-  .game.won {
+  .game.won,
+  .game {
     zoom: 120%;
   }
 }
