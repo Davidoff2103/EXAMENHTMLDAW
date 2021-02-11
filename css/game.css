@@ -38,8 +38,10 @@ html {
 }
 
 .game {
+  overflow: hidden;
   width: auto;
   height: auto;
+  position: relative;
 }
 
 .game.playing {
